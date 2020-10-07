@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ren Lee</title>
+    <link>https://www.pid.ren/</link>
+    <description>Recent content on Ren Lee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://www.pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about_me</title>
+      <link>https://www.pid.ren/about/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.pid.ren/about/</guid>
+      <description>current_obsessions := map[string]string{
+ &amp;ldquo;Site Reliability Engineer&amp;quot;: &amp;ldquo;I seriously love all things distributed systems, making sense of where/how things can break, how different layers interact, play I-SPY with bottlenecks, and preventing outages with some really good set of metrics, data, and graphs.</description>
+    </item>
+    
+  </channel>
+</rss>
