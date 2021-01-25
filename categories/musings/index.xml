@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RenLee</title>
-    <link>https://pid.ren/</link>
-    <description>Recent content on RenLee</description>
+    <title>musings on RenLee</title>
+    <link>https://pid.ren/categories/musings/</link>
+    <description>Recent content in musings on RenLee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2021, Ren Lee</copyright>
-    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/categories/musings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Musings after Surviving my First Year as an SRE</title>
       <link>https://pid.ren/post/sre_1year_as_an_sre/</link>

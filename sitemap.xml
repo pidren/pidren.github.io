@@ -3,7 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://pid.ren/post/sre_1year_as_an_sre/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/categories/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/tags/musings/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/categories/musings/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/post/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/tags/sre/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/categories/sre/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/tags/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

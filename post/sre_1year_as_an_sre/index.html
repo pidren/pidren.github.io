@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>5 Musings after Surviving my First Year as an SRE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/portrait.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Ren Lee
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    Site Reliability Engineer @ Arista Networks. Minimalist, ultralight backpacker, almost-vegetarian, and avid reader. Differently-abled. Cat-mom. All thoughts are my own. (She/her)
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../post/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://github.com/pidren" target="_blank">
+                            <i class="fab fa-github fa-2x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/pidren/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-2x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="mailto:ren@pid.ren" target="_blank">
+                            <i class="fas fa-envelope fa-2x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h3 class="mb-0">5 Musings after Surviving my First Year as an SRE</h3>
+            
+            <small class="text-muted">Published January 24, 2021</small>
+        </div>
+
+        <article>
+            <p>I recently completed my first year as an SRE on Cloudvision as a Service team with Arista Networks, which is our core customer facing cloud service product. Working with infrastructure, building automation, doing ops, and the rest of the rodeo is nothing new to me, but doing so as an SRE to a customer facing product was a completely new ball game with entirely different set of risks, costs, mindset, and business impact to think of.</p>
+<p>So here are 5 musings about being an SRE from a fledgling that survived their first year 🤣 &mdash;</p>
+<h5 id="1-being-comfortable-with-being-uncomfortable">1. Being comfortable with being uncomfortable</h5>
+<p>Now, more than ever before, I needed to keep cool under pressure especially if there were customer facing problems during an on-call period. &ldquo;Keep calm&rdquo; while thinking of SLAs and business impact while also trying to debug at lightning speed is name of the game. Unfortunately, I don&rsquo;t think there&rsquo;s any shortcut to developing the thick skin to withstand pressure as well as gaining familiarity with the systems you&rsquo;re managing, but it is also a skill that only grows with time.</p>
+<h5 id="2-macro-debugging-and-micro-debugging-at-the-same-time">2. Macro debugging and Micro debugging at the same time</h5>
+<p>I think a core fundamental skill that SREs should have is the ability to &ldquo;switch&rdquo; between &ldquo;macro&rdquo; debugging vs. &ldquo;micro&rdquo; debugging. Macro debugging involves understanding how different layers of the system interact - for example, a misconfiguration in a low level layer such as Zookeeper or Kafka would cause problems on all other dependent layers (eventually), but understanding such dependencies requires being able to digest the bigger picture.</p>
+<p>Micro debugging would involve looking at what I&rsquo;d call &ldquo;down and dirty&rdquo; details such as goroutine/heap dumps and looking at code directly to fix a problem, essentially a skill any software engineer would be comfortable with.</p>
+<p>As an SRE being able to fluidly switch between macro vs. micro debugging is not only a skill that must be practiced and honed but also a privilege, since very few other teams have such access to the big picture.</p>
+<h5 id="3-theres-no-greater-frustration-than-missing-metrics">3. There&rsquo;s no greater frustration than missing metrics</h5>
+<p>Primary tool of SREs are metrics and data. Metrics are &ldquo;eyes and ears&rdquo; of the operation and without them, you become blind to whatever is happening in the system, and thus, cannot make informed judgments. Details into alerts/monitoring/metrics deserves their own post - to simplify, not having good coverage of metrics and proper monitoring systems to digest such metrics into graphs/alerts is the equivalent to driving a car with maybe half of the signals working, or missing a brake and maybe only some of the headlights turned on - essentially, you&rsquo;re riding on luck, and nobody wants the risks involved with relying on something as unreliable as luck.</p>
+<h5 id="4-embracing-chaos">4. Embracing Chaos</h5>
+<p>No such thing as 100% reliable systems. No such thing as safe deployments. Instead of trying to achieve perfection, which is sort of like a fool&rsquo;s dream, it&rsquo;s better to adopt shorter iterations and CI/CD, and operate with the mindset that things will fail. There&rsquo;s no such thing as code/systems that will never fail, but graceful failures and quick recovery from degraded operation are real goals you can actually achieve.</p>
+<h5 id="5-is-this-customer-visible-or-not">5. Is this customer visible or not?</h5>
+<p>Literally, the most important question you should ask to assess/predict risks with whatever change you are about to roll out.</p>
+
+        </article>
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; 2021, Ren Lee
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>
