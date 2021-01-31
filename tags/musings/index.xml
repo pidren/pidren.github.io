@@ -7,9 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2021, Ren Lee</copyright>
-    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/tags/musings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/tags/musings/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5 Musings after Surviving my First Year as an SRE</title>
+      <title>3 Features Distributed Systems Have In Common</title>
+      <link>https://pid.ren/post/sre_3_things_distributed_systems_have_in_common/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pid.ren/post/sre_3_things_distributed_systems_have_in_common/</guid>
+      <description>Imagine things are on fire and you only have a few minutes to figure out a distributed system. To make things more difficult, you&amp;rsquo;ve never seen this system before. You feel yourself tensing up - sweaty palms, cloudy mind - and you think, gosh I just wish I knew where to start!
+In this post, hopefully I can help you if you&amp;rsquo;re in this scenario! 😄
+Here are 3 features commonly found in most distributed systems you can use to speed debug so that you don&amp;rsquo;t have to feel lost trying to understand all the details.</description>
+    </item>
+    
+    <item>
+      <title>5 Thoughts after Surviving my First Year as an SRE</title>
       <link>https://pid.ren/post/sre_1year_as_an_sre/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
       
