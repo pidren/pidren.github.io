@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RenLee</title>
+    <title>pid.ren</title>
     <link>https://pid.ren/</link>
-    <description>Recent content on RenLee</description>
+    <description>Recent content on pid.ren</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2021, Ren Lee</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2021, Ren Lee</copyright>
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>3 Features Distributed Systems Have In Common</title>
-      <link>https://pid.ren/post/sre_3_things_distributed_systems_have_in_common/</link>
+      <title>3 Tips for fast debugging a distributed system that you&#39;ve never seen before</title>
+      <link>https://pid.ren/post/sre_ds_fast_debugging/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pid.ren/post/sre_3_things_distributed_systems_have_in_common/</guid>
-      <description>Imagine things are on fire and you only have a few minutes to figure out a distributed system. To make things more difficult, you&amp;rsquo;ve never seen this system before. You feel yourself tensing up - sweaty palms, cloudy mind - and you think, gosh I just wish I knew where to start!
-In this post, hopefully I can help you if you&amp;rsquo;re in this scenario! 😄
-Here are 3 features commonly found in most distributed systems you can use to speed debug so that you don&amp;rsquo;t have to feel lost trying to understand all the details.</description>
+      <guid>https://pid.ren/post/sre_ds_fast_debugging/</guid>
+      <description>Imagine things are on fire and you only have a few minutes to figure out a distributed system. To make things more difficult, you’ve never seen this system before. You feel yourself tensing up - sweaty palms, cloudy mind - and you think, gosh I just wish I knew where to start!
+Here are 3 features commonly found in most distributed systems you can use to speed debug so that you don’t have to feel lost trying to understand all the details.</description>
     </item>
     
     <item>
-      <title>5 Thoughts after Surviving my First Year as an SRE</title>
-      <link>https://pid.ren/post/sre_1year_as_an_sre/</link>
-      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <title>5 Lessons after Surviving my First Year as an SRE</title>
+      <link>https://pid.ren/post/sre_firstyear/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pid.ren/post/sre_1year_as_an_sre/</guid>
+      <guid>https://pid.ren/post/sre_firstyear/</guid>
       <description>I recently completed my first year as an SRE on Cloudvision as a Service team with Arista Networks, which is our core customer facing cloud service product. Working with infrastructure, building automation, doing ops, and the rest of the rodeo is nothing new to me, but doing so as an SRE to a customer facing product was a completely new ball game with entirely different set of risks, costs, mindset, and business impact to think of.</description>
     </item>
     

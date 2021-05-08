@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sre on pid.ren</title>
-    <link>https://pid.ren/tags/sre/</link>
-    <description>Recent content in sre on pid.ren</description>
+    <title>SRE Handbook on pid.ren</title>
+    <link>https://pid.ren/categories/sre-handbook/</link>
+    <description>Recent content in SRE Handbook on pid.ren</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Ren Lee</copyright>
     <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://pid.ren/tags/sre/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pid.ren/categories/sre-handbook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

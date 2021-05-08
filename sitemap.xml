@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://pid.ren/post/sre_3_things_distributed_systems_have_in_common/</loc>
+    <loc>https://pid.ren/post/sre_ds_fast_debugging/</loc>
+    <lastmod>2021-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pid.ren/post/sre_firstyear/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,17 +18,17 @@
   </url>
   
   <url>
-    <loc>https://pid.ren/categories/distributed-systems/</loc>
+    <loc>https://pid.ren/tags/distributed-systems/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pid.ren/tags/musings/</loc>
+    <loc>https://pid.ren/tags/fast-debugging/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://pid.ren/post/</loc>
+    <loc>https://pid.ren/tags/handbook/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://pid.ren/categories/speed-debugging/</loc>
+    <loc>https://pid.ren/post/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,18 +48,13 @@
   </url>
   
   <url>
-    <loc>https://pid.ren/categories/sre/</loc>
+    <loc>https://pid.ren/categories/sre-handbook/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://pid.ren/tags/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pid.ren/post/sre_1year_as_an_sre/</loc>
-    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

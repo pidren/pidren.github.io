@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>3 Tips for fast debugging a distributed system that you&#39;ve never seen before</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-N0FVQSX2JC', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/profile.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Ren Lee
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    Site Reliability Engineer @ Arista Networks. Minimalist, ultralight backpacker, avid reader, and a cat-mom. All thoughts/opinions are my own. (She/her)
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../post/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://github.com/pidren" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/pidren" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="ren@pid.ren" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h3 class="mb-0">3 Tips for fast debugging a distributed system that you&#39;ve never seen before</h3>
+            
+            <small class="text-muted">Published January 31, 2021</small>
+        </div>
+
+        <article>
+            <p><em>Imagine things are on fire and you only have a few minutes to figure out a distributed system. To make things more difficult, you’ve never seen this system before. You feel yourself tensing up - sweaty palms, cloudy mind - and you think, gosh I just wish I knew where to start!</em></p>
+<p>Here are 3 features commonly found in most distributed systems you can use to speed debug so that you don’t have to feel lost trying to understand all the details. The goal here is speed not depth especially during an emergency. Of course not all distributed systems follow these features but they tend to implement some variant or another.</p>
+<h4 id="1-separation-of-roles-coordinators-and-data-managers">1) Separation of Roles: “coordinators” and “data managers”</h4>
+<p>I guarantee you’ll find this kind of an architecture very common, where a distributed system has separated roles between coordinator(s)/master(s) and components that are solely dedicated for doing something with data (transformation, processing, storage, etc). The job of the coordinators usually is to keep track of metadata with cluster state information (i.e. how many of the data managing components there are, and which one of them are alive).</p>
+<p>A great example of this is in Kubernetes, where you have the cluster apiserver that acts as the “coordinator” that is aware of all the nodes (container hosts) and metadata for all of the workload running on the cluster.</p>
+<p>Now, what does this tell you?</p>
+<p>Say if the “coordinator” components are failing. Most of the time this disables you from effectively making changes on the distributed system (i.e. scaling up and down components, making configuration changes, etc). This is usually a far greater problem than a couple componentns dedicated for data management failing - a great analogy is if you have an airport, and the air traffic control is non-functional, it’s pretty difficult, if not impossible, for planes to land or depart. You can use knowledge of separation of roles to prioritize what to do first when multiple components are failing.</p>
+<h4 id="2-some-kind-of-ha-mechanism-usually-via-replicas">2) Some kind of HA mechanism, usually via replicas</h4>
+<p>Now, how a system implements HA has wild amount of variations not to mention HA can mean very different things in different context/system you are looking at.</p>
+<p>However, many distributed systems that directly deal with data processing and management, such as Elasticsearch, have a concept of sharding or replicas where the core idea is to have more than one copy of data within the system at any point in time.</p>
+<p>This does not guarantee all copies of data is ready for access at all times, nor does it guarantee all copies of data will get updated at the same time - what’s important is that they’re eventually consistent. What’s most important is that eventually we have multiple copies of the data spread around the system that even if one copy fails, we have others to recover from or seemlessly continue operations on.</p>
+<p>For example, for Elasticsearch the concept of “replicas” is best represented in primary and replica shards which house essentially the same subset of data for an index. Now, ignore the jargon - what’s most important here is that despite primary and replica shards housing essentially the same data, the primary is responsible for validating operations (i.e. write op) first, processing that data and writing it out first, then passing the message to replicas - so as you can see, there are minute points in time where primaries are updating replicas and may have different data. However, such updates are fast enough and eventually primaries and replicas have all of the same data. If a primary shard(s) fails, one (or more) of the replica shards are promoted as primary shard(s) and the world continues on in HA bliss. You can find such mechanism in most distributed systems, with some variation or another.</p>
+<h4 id="3-fast-access-data-is-in-memory-long-term-is-on-disk">3) Fast access data is in memory, long term is on disk</h4>
+<p>Now this last point isn’t strictly in relation to distributed sytems - in fact, keeping fast access data in memory and long term access on disk is found in monoliths, and existed even before microservices were a thing.</p>
+<p>However, this is still important in that, say you took the ideas from Point 1 above and now know what kinds of components exist in your system. Knowing what kind of data each component stores in memory vs. on a persistent store or disk will tell you what kind of data is lost when the component fails - whatever in memory is gone, and whatever it managed to write to disk still exists (this is of course, assuming you didn’t lose whatever you’re using as persistent store).</p>
+<p>This is very useful in cases of debugging lost data or lost operations - most of the time it’s because the data in memory didn’t get to flush to disk and got lost when the component failed. Of course, the discussion of “why would you keep so much state in memory” is another discussion but really, have you seen systems like Hbase?!</p>
+<p>&ndash;</p>
+<p><em>May you speed debug with agility and style. :)</em></p>
+
+        </article>
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; Copyright 2021, Ren Lee
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>

@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on RenLee</title>
+    <title>Tags on pid.ren</title>
     <link>https://pid.ren/tags/</link>
-    <description>Recent content in Tags on RenLee</description>
+    <description>Recent content in Tags on pid.ren</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2021, Ren Lee</copyright>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pid.ren/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2021, Ren Lee</copyright>
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://pid.ren/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>musings</title>
-      <link>https://pid.ren/tags/musings/</link>
+      <title>distributed systems</title>
+      <link>https://pid.ren/tags/distributed-systems/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pid.ren/tags/musings/</guid>
+      <guid>https://pid.ren/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fast debugging</title>
+      <link>https://pid.ren/tags/fast-debugging/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pid.ren/tags/fast-debugging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>handbook</title>
+      <link>https://pid.ren/tags/handbook/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pid.ren/tags/handbook/</guid>
       <description></description>
     </item>
     
