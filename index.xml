@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Ren Lee</title>
+    <title>Ren Lee</title>
     <link>https://pid..ren/</link>
-    <description>Recent content in About on Ren Lee</description>
+    <description>Recent content on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://pid..ren/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>https://pid..ren/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pid..ren/about/</guid>
-      <description>Hello! 👋  Thanks for stopping by - I am Ren. Currently, Site Reliability Engineering Manager @ Arista Networks Inc, leading the CloudVision SaaS team.
- As a Site Reliability Engineer, I am a  Postmortem perfectionist, starting from RCA to action item closure Chaotic breaker of systems and code Fanatic reverse engineer Lover of deep diving into code for any systems I run Automate everything I do more than once  As an Engineering Manager, I manage by  Showing I deeply care and respect my reports via leading by example and being transparent Aligning individual goals with wider team/product objectives Helping people find purpose and meaning in what they do Removing obstacles from growth paths  As a SRE Team Lead, I lead by  Setting clear priorities for the product and team around service uptime, while &amp;hellip; Balancing product, team, and individual priorities Carefully monitoring oncall stress/burn out, toil, postmortem and action item closures, and project progress Creating a firm identity SRE to which team members can align to Leading greater SRE culture adoption within the company Defining quarterly and yearly goals for both short and long term planning   How to reach me I am allergic to social media, so the best way to reach me is via email or a message on LinkedIn.</description>
-    </item>
-    
     <item>
       <title>Links</title>
       <link>https://pid..ren/links/</link>
