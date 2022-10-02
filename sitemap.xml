@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pid.ren/links/</loc>
+    <loc>https://pid.ren/tags/management/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/organization/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/posts/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
   </url><url>
     <loc>https://pid.ren/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/software/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/posts/software-looking-beyond-just-the-technical/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/teams/</loc>
+    <lastmod>2022-10-01T11:16:56-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/about/</loc>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://pid.ren/categories/</loc>
   </url>
 </urlset>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Software Looking Beyond Just the Technical | Ren Lee</title>
+  <link rel = 'canonical' href = 'https://pid.ren/posts/software-looking-beyond-just-the-technical/'>
+  <meta name="description" content="Systems thinker, problem solver, and pattern finder. Oh, and I love being an SRE. Thanks for stopping by!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Software Looking Beyond Just the Technical" />
+<meta property="og:description" content="(In this article I use the term &ldquo;management&rdquo; loosely to refer to any layer of management, not just managers.)
+As a software engineer one of the most critical skillset is being able to discern which tool is the right one for the job that needs to be done. This deserves its own blog post, but in short a software engineer must know what language, features of a language, framework, and tool is the best to solve your problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pid.ren/posts/software-looking-beyond-just-the-technical/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-01T11:16:56-07:00" />
+<meta property="article:modified_time" content="2022-10-01T11:16:56-07:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Software Looking Beyond Just the Technical"/>
+<meta name="twitter:description" content="(In this article I use the term &ldquo;management&rdquo; loosely to refer to any layer of management, not just managers.)
+As a software engineer one of the most critical skillset is being able to discern which tool is the right one for the job that needs to be done. This deserves its own blog post, but in short a software engineer must know what language, features of a language, framework, and tool is the best to solve your problem."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://pid.ren/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://pid.ren/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Food for Thought</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://pid.ren/about/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&text=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&is_video=false&description=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Software%20Looking%20Beyond%20Just%20the%20Technical&body=Check out this article: https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&name=Software%20Looking%20Beyond%20Just%20the%20Technical&description=%28In%20this%20article%20I%20use%20the%20term%20%26ldquo%3bmanagement%26rdquo%3b%20loosely%20to%20refer%20to%20any%20layer%20of%20management%2c%20not%20just%20managers.%29%0aAs%20a%20software%20engineer%20one%20of%20the%20most%20critical%20skillset%20is%20being%20able%20to%20discern%20which%20tool%20is%20the%20right%20one%20for%20the%20job%20that%20needs%20to%20be%20done.%20This%20deserves%20its%20own%20blog%20post%2c%20but%20in%20short%20a%20software%20engineer%20must%20know%20what%20language%2c%20features%20of%20a%20language%2c%20framework%2c%20and%20tool%20is%20the%20best%20to%20solve%20your%20problem." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&t=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scenario-1-a-project-is-failing-to-meet-its-deadline">Scenario #1: A project is failing to meet its deadline</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#scenario-2-a-feature-area-quality-ie-bugs-test-pass-rates-are-falling">Scenario #2: A feature area quality (i.e. bugs, test pass rates) are falling</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Software Looking Beyond Just the Technical
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-10-01 11:16:56 -0700 PDT" itemprop="datePublished">2022-10-01</time>
+          
+        </div>
+        
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/management" rel="tag">management</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/organization" rel="tag">organization</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/teams" rel="tag">teams</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/software" rel="tag">software</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>(In this article I use the term &ldquo;management&rdquo; loosely to refer to any layer of management, not just managers.)</p>
+<p>As a software engineer one of the most critical skillset is being able to discern which tool is the right one for the job that needs to be done. This deserves its own blog post, but in short a software engineer must know what language, features of a language, framework, and tool is the best to solve your problem.</p>
+<p>As a manager, this critical skillset expands even further. Not only do you have the foundations of software engineer to know what toolsets are best suited for building a solution, you must be able to discern:</p>
+<ol>
+<li>Does this project need to be built? Is this project the right project for the problem at hand (business need)</li>
+<li>Who are the right people to solve this problem?</li>
+<li>What is the right structure of people to solve this problem?</li>
+<li>What resources will be needed for this project to be brought to completion?</li>
+<li>What different teams will need to mesh together to solve this problem?</li>
+<li>What performance criteria will be used to measure success fo this project? This includes both the solution built being functional and scalable, but also to measure speed of execution, team cohesion (this again, deserves its own post), etc.
+&hellip; and many more.</li>
+</ol>
+<p>Regardless of how long this list looks like for you, challenges at management level must involve looking at not just the technical, but the organizational. It is easy, especially coming from a deep software/engineering background, to ignore this other half when creating plans to solve problems that seem only like technical challenges. At any management level, any challenge being solved should assume it must tackle both sides of the world, the yin and yang. Software organizations are ultimately human, and you cannot solve a challenge without recognizing both for any given problem that needs to be solved. Any technical challenge has a hidden human and organization element to it, and it is management&rsquo;s task to figure that out. A management that looks at a problem purely technically run the risk of creating structures for long term solutions, fail to recognize human aspect that deeply affects implementation and success of large scale projects, or simply lose the opportunity to tape into something greater (speed, employee hapiness, creativity, etc).</p>
+<p>In this post, I&rsquo;ve picked two scenarios that can be common to see how each can be broken down into organizational and technical problems, and how both must be addressed to create a holistic solution.</p>
+<h2 id="scenario-1-a-project-is-failing-to-meet-its-deadline">Scenario #1: A project is failing to meet its deadline</h2>
+<p>Challenge: A project, set of features, or product launch are failing to meet expected deadline, or has failed to meet several deadlines.</p>
+<ul>
+<li>
+<p>Technical: Either the project design is too complex, engineers on the project do not have the technical knowledge (i.e. they have to build on a brand new platform or language out of their expertise), or both (ignoring other factors such as infrastructure challenges for now). Solve this by figuring out which one it is - if design is too complex, you can directly work with the team to simplify and prioritize design decisions being made; if it&rsquo;s the team&rsquo;s lack of technical expertise, provide them with training and tools that they use to learn the skills to work the project, and/or connect to the right mentors that already have the technical skillset (that would be yourself as well, limited by time that you have).</p>
+</li>
+<li>
+<p>Organizational: First, are the people working on the project meshing well? Time critical projects absolutely require people working on it to be able to work with each other; in other words, team cohesion is not an option, it is a requirement. Identify which engineers work well with who, and how. Are the right relationship dynamics on the team? If the team members dislike working with each other your project will never meet its deadline, let alone a tight deadline. Second, is there a clear leader for this project? A leader sets the tone, quality bar, and group dynamics for a team. Especially for mission critical projects you must have a leader to coordinate effort, boost morale, and keep the team on track. Such leaders are obviously rare in any organization and in much demand - some naturally grow into the role either by desire or by natural circumstances; but more often than not leaders need active cultivating by management. If a natural leader for a team does not exist, management must be hands on in cultivating candidates via direct mentorship, and showing them how to become a leader. A project without this minimal hierarchy will fail to meet desired deadlines and/or underperform.</p>
+</li>
+</ul>
+<h4 id="why-you-need-the-holistic-solution">Why you need the holistic solution</h4>
+<p>Software projects should really be thought of missions. They are missions to accomplish a task, and a task can be producing a new project via a project. A mission will probably work with any set of people; but to achieve the best, you need to remember that at the end of the day it is humans building a software, and by nature, humans need to enjoy their fellow teammates they need to work with. A cohesive architectural design not only needs to be technically sound, but also need a bonded team to debate, agree, and implement various parts of a large project <em>together</em>. Such togetherness is only improved by a team that meshes well together and can operate in harmony with deep trust.</p>
+<h2 id="scenario-2-a-feature-area-quality-ie-bugs-test-pass-rates-are-falling">Scenario #2: A feature area quality (i.e. bugs, test pass rates) are falling</h2>
+<p>Challenge: a set of features, or feature area, quality is falling. This is noticed by bugs seen by customers, internal metrics such as test pass rates are falling/consistently low/unpredictable, overall dissatisfaction with product area.</p>
+<ul>
+<li>
+<p>Technical: Clear sign of technical debt. For brevity, technical debt can be broken down into 3 categories: bloated architectural design over time, testing gaps and/or broken test feedback loop to developers, and unreliable quality control. There&rsquo;s really no good way around this other than you need a long and hard look at (1) current architectural design and see if needs an evolution/redesign to accommodate for code/feature set growth, (2) triaging and spending the time and sweat to fix broken tests, (3) removing and rewriting tests that just may not work anymore. It requires work, and it is maintenance and technical debt that must be paid and there is no shortcut to this.</p>
+</li>
+<li>
+<p>Organizational: Ownership, and team morale. Start at the first step - is there a functional team behind this feature area? Who are the people on this team and what are each of their strengths? If yes, how is it organized? Is there a model for ownership, and expectation on quality, response times, and turnaround time standard for broken features and tests? Who is monitoring it (ideally, the owning team)? Second, tackle team morale. Is the team demotivated or feeling hopeless? Any team that is deflated will simply not have the energy to care or notice about quality standards. As a manager and with team leaders (you have them right?) you must motivate the team - even start with a simple &ldquo;we can do this&rdquo; all the way to iterative steps with clearly defined goals on quality bars to be improved (for example, work on clearly defining what success means such as &ldquo;We&rsquo;ll raise pass rate from 90% to 91%&rdquo;, and avoid vague goals such as &ldquo;we need to raise our pass rates!&rdquo;). You need someone to believe that the team will succeed at improving as well as having the team itself also to believe they can be successful - clear team identity and a detailed roadmap will provide such a system.</p>
+</li>
+</ul>
+<h4 id="why-you-need-the-holistic-solution-1">Why you need the holistic solution</h4>
+<p>For this scenario, the technical challenge is obvious. What isn&rsquo;t obvious is the organizational. What organizational solution brings is continuity of implementing the technical solution. The technical solutions are a one time, emergency fix to failing quality, and the organizational fix brings the long term guarantee of continuing to iterate the best practices that would be the result of implementing the technical.</p>
+<p>There are many other scenarios at which this conversation can continue, but the main takeaway is that management must approach challenges with both technical and organizational lens to be truly effective. You cannot solve challenges with purely organizational solutions, or purely technical solutions. Identifying both is the next step from a software engineer to someone in management, and success and products depend on this.</p>
+<p>Have a good day! 😊 - Ren</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Food for Thought</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scenario-1-a-project-is-failing-to-meet-its-deadline">Scenario #1: A project is failing to meet its deadline</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#scenario-2-a-feature-area-quality-ie-bugs-test-pass-rates-are-falling">Scenario #2: A feature area quality (i.e. bugs, test pass rates) are falling</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&text=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&is_video=false&description=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Software%20Looking%20Beyond%20Just%20the%20Technical&body=Check out this article: https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&title=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&name=Software%20Looking%20Beyond%20Just%20the%20Technical&description=%28In%20this%20article%20I%20use%20the%20term%20%26ldquo%3bmanagement%26rdquo%3b%20loosely%20to%20refer%20to%20any%20layer%20of%20management%2c%20not%20just%20managers.%29%0aAs%20a%20software%20engineer%20one%20of%20the%20most%20critical%20skillset%20is%20being%20able%20to%20discern%20which%20tool%20is%20the%20right%20one%20for%20the%20job%20that%20needs%20to%20be%20done.%20This%20deserves%20its%20own%20blog%20post%2c%20but%20in%20short%20a%20software%20engineer%20must%20know%20what%20language%2c%20features%20of%20a%20language%2c%20framework%2c%20and%20tool%20is%20the%20best%20to%20solve%20your%20problem." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpid.ren%2fposts%2fsoftware-looking-beyond-just-the-technical%2f&t=Software%20Looking%20Beyond%20Just%20the%20Technical" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Ren Lee 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Food for Thought</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
