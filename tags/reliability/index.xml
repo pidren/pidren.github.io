@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Ren Lee</title>
-    <link>https://pid.ren/posts/</link>
-    <description>Recent content in Posts on Ren Lee</description>
+    <title>reliability on Ren Lee</title>
+    <link>https://pid.ren/tags/reliability/</link>
+    <description>Recent content in reliability on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/tags/reliability/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Single Most Important Vocabulary in SRE</title>
       <link>https://pid.ren/posts/single-most-important-vocab-in-sre/</link>
@@ -18,16 +18,6 @@
 💭 What can go wrong with this framework I am using?
 💭 What happens when something &amp;ldquo;goes wrong&amp;rdquo;? Do I have a fallback mechanism? Kill switch?
 Sometimes I would even obsess over a single line of code written, thinking of all the ways that one line could break, trying to make it as bulletproof as possible.</description>
-    </item>
-    
-    <item>
-      <title>Software: Looking Beyond Just the Technical</title>
-      <link>https://pid.ren/posts/software-looking-beyond-just-the-technical/</link>
-      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
-      
-      <guid>https://pid.ren/posts/software-looking-beyond-just-the-technical/</guid>
-      <description>(In this article I use the term &amp;ldquo;management&amp;rdquo; loosely to refer to any layer of management, not just managers.)
-As a software engineer one of the most critical skillset is being able to discern which tool is the right one for the job that needs to be done. This deserves its own blog post, but in short a software engineer must know what language, features of a language, framework, and tool is the best to solve your problem.</description>
     </item>
     
   </channel>

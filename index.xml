@@ -6,11 +6,24 @@
     <description>Recent content on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Oct 2022 11:16:56 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Software Looking Beyond Just the Technical</title>
+      <title>The Single Most Important Vocabulary in SRE</title>
+      <link>https://pid.ren/posts/single-most-important-vocab-in-sre/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/posts/single-most-important-vocab-in-sre/</guid>
+      <description>Ever since I&amp;rsquo;ve start my career in software engineering, I&amp;rsquo;ve always been obsessed with one question in mind &amp;mdash; what can go wrong?
+💭 What can go wrong with the code I just wrote?
+💭 What can go wrong with this framework I am using?
+💭 What happens when something &amp;ldquo;goes wrong&amp;rdquo;? Do I have a fallback mechanism? Kill switch?
+Sometimes I would even obsess over a single line of code written, thinking of all the ways that one line could break, trying to make it as bulletproof as possible.</description>
+    </item>
+    
+    <item>
+      <title>Software: Looking Beyond Just the Technical</title>
       <link>https://pid.ren/posts/software-looking-beyond-just-the-technical/</link>
-      <pubDate>Sat, 01 Oct 2022 11:16:56 -0700</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/posts/software-looking-beyond-just-the-technical/</guid>
       <description>(In this article I use the term &amp;ldquo;management&amp;rdquo; loosely to refer to any layer of management, not just managers.)

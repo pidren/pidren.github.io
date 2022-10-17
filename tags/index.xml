@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Oct 2022 11:16:56 -0700</lastBuildDate><atom:link href="https://pid.ren/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>reliability</title>
+      <link>https://pid.ren/tags/reliability/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/tags/reliability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>risk</title>
+      <link>https://pid.ren/tags/risk/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/tags/risk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sre</title>
+      <link>https://pid.ren/tags/sre/</link>
+      <pubDate>Sun, 16 Oct 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/tags/sre/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>management</title>
       <link>https://pid.ren/tags/management/</link>
-      <pubDate>Sat, 01 Oct 2022 11:16:56 -0700</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/tags/management/</guid>
       <description></description>
@@ -19,7 +46,7 @@
     <item>
       <title>organization</title>
       <link>https://pid.ren/tags/organization/</link>
-      <pubDate>Sat, 01 Oct 2022 11:16:56 -0700</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/tags/organization/</guid>
       <description></description>
@@ -28,7 +55,7 @@
     <item>
       <title>software</title>
       <link>https://pid.ren/tags/software/</link>
-      <pubDate>Sat, 01 Oct 2022 11:16:56 -0700</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/tags/software/</guid>
       <description></description>
@@ -37,7 +64,7 @@
     <item>
       <title>teams</title>
       <link>https://pid.ren/tags/teams/</link>
-      <pubDate>Sat, 01 Oct 2022 11:16:56 -0700</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/tags/teams/</guid>
       <description></description>
