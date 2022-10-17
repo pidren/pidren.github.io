@@ -13,7 +13,7 @@
       <pubDate>Sun, 16 Oct 2022 00:00:00 -0700</pubDate>
       
       <guid>https://pid.ren/posts/single-most-important-vocab-in-sre/</guid>
-      <description>Ever since I&amp;rsquo;ve start my career in software engineering, I&amp;rsquo;ve always been obsessed with one question in mind &amp;mdash; what can go wrong?
+      <description>Ever since I&amp;rsquo;ve started my career in software engineering, I&amp;rsquo;ve always been obsessed with one question in mind &amp;mdash; what can go wrong?
 💭 What can go wrong with the code I just wrote?
 💭 What can go wrong with this framework I am using?
 💭 What happens when something &amp;ldquo;goes wrong&amp;rdquo;? Do I have a fallback mechanism? Kill switch?
