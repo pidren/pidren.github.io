@@ -6,7 +6,17 @@
     <description>Recent content on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on being an engineering manager, 1 year after (Part 1)</title>
+      <link>https://pid.ren/posts/reflection-1yr-mgmt-part1/</link>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/posts/reflection-1yr-mgmt-part1/</guid>
+      <description>I&amp;rsquo;ve recently completed my first year as an engineering manager - specifically on the Site Reliability team for CloudVision as a Service at Arista.
+In many ways I&amp;rsquo;m writing this for myself moreso than anything else - a way to reflect on this year that flew by so quickly, to catalogue what I&amp;rsquo;ve learned, to look ahead into next year. I also hope this helps anyone that is considering to step into management, not as a way to discourage, but rather to encourage by sharing lessons I&amp;rsquo;ve learned this year.</description>
+    </item>
+    
     <item>
       <title>The Single Most Important Vocabulary in SRE</title>
       <link>https://pid.ren/posts/single-most-important-vocab-in-sre/</link>
