@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2023 on Ren Lee</title>
+    <link>https://pid.ren/tags/2023/</link>
+    <description>Recent content in 2023 on Ren Lee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Jan 2023 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/tags/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goal as Engineering Manager for 2023</title>
+      <link>https://pid.ren/posts/engineering-leadership-goal-2023/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/posts/engineering-leadership-goal-2023/</guid>
+      <description>2022 felt like a pretty rough year for all of us. A lot of things were happening in macroeconomic environment, to put lightly. Beyond the economic environment, there was also seemingly a non-stop deluge of rough news of our state of the world - wars, climate change, civil unrest, continuing effects of the pandemic, and so on. Tech world alone is going through challenging times.
+Over the holidays I was reflecting on how all of such things are affecting the people on my team last year.</description>
+    </item>
+    
+  </channel>
+</rss>

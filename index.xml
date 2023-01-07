@@ -6,7 +6,27 @@
     <description>Recent content on Ren Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 00:00:00 -0700</lastBuildDate><atom:link href="https://pid.ren/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goal as Engineering Manager for 2023</title>
+      <link>https://pid.ren/posts/engineering-leadership-goal-2023/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/posts/engineering-leadership-goal-2023/</guid>
+      <description>2022 felt like a pretty rough year for all of us. A lot of things were happening in macroeconomic environment, to put lightly. Beyond the economic environment, there was also seemingly a non-stop deluge of rough news of our state of the world - wars, climate change, civil unrest, continuing effects of the pandemic, and so on. Tech world alone is going through challenging times.
+Over the holidays I was reflecting on how all of such things are affecting the people on my team last year.</description>
+    </item>
+    
+    <item>
+      <title>Air France Flight 447 - an Operational failure</title>
+      <link>https://pid.ren/posts/sre-operational-excellence/</link>
+      <pubDate>Sun, 06 Nov 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://pid.ren/posts/sre-operational-excellence/</guid>
+      <description>I came across an amazing piece of article over this weekend, one that provided an in-depth analysis of the tragedy of Air France Flight 447, &amp;ldquo;The Long Way Down: The crash of Air France flight 447&amp;rdquo;.
+(Disclaimer: I am in no shape or form affiliated with this author or Medium - I simply think this was an astoundingly well done article and I encourage anyone that is interested in systems safety or aviations to have a read.</description>
+    </item>
+    
     <item>
       <title>Reflection on being an engineering manager, 1 year after (Part 1)</title>
       <link>https://pid.ren/posts/reflection-1yr-mgmt-part1/</link>

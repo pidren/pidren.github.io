@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Air France Flight 447 - an Operational failure | Ren Lee</title>
+  <link rel = 'canonical' href = 'https://pid.ren/posts/sre-operational-excellence/'>
+  <meta name="description" content="Systems thinker, problem solver, and pattern finder. Oh, and I love being an SRE. Thanks for stopping by!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Air France Flight 447 - an Operational failure" />
+<meta property="og:description" content="I came across an amazing piece of article over this weekend, one that provided an in-depth analysis of the tragedy of Air France Flight 447, &ldquo;The Long Way Down: The crash of Air France flight 447&rdquo;.
+(Disclaimer: I am in no shape or form affiliated with this author or Medium - I simply think this was an astoundingly well done article and I encourage anyone that is interested in systems safety or aviations to have a read." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pid.ren/posts/sre-operational-excellence/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-06T00:00:00-07:00" />
+<meta property="article:modified_time" content="2022-11-06T00:00:00-07:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Air France Flight 447 - an Operational failure"/>
+<meta name="twitter:description" content="I came across an amazing piece of article over this weekend, one that provided an in-depth analysis of the tragedy of Air France Flight 447, &ldquo;The Long Way Down: The crash of Air France flight 447&rdquo;.
+(Disclaimer: I am in no shape or form affiliated with this author or Medium - I simply think this was an astoundingly well done article and I encourage anyone that is interested in systems safety or aviations to have a read."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://pid.ren/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://pid.ren/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Food for Thought</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://pid.ren/posts/reflection-1yr-mgmt-part1/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://pid.ren/posts/engineering-leadership-goal-2023/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&text=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&is_video=false&description=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Air%20France%20Flight%20447%20-%20an%20Operational%20failure&body=Check out this article: https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&name=Air%20France%20Flight%20447%20-%20an%20Operational%20failure&description=I%20came%20across%20an%20amazing%20piece%20of%20article%20over%20this%20weekend%2c%20one%20that%20provided%20an%20in-depth%20analysis%20of%20the%20tragedy%20of%20Air%20France%20Flight%20447%2c%20%26ldquo%3bThe%20Long%20Way%20Down%3a%20The%20crash%20of%20Air%20France%20flight%20447%26rdquo%3b.%0a%28Disclaimer%3a%20I%20am%20in%20no%20shape%20or%20form%20affiliated%20with%20this%20author%20or%20Medium%20-%20I%20simply%20think%20this%20was%20an%20astoundingly%20well%20done%20article%20and%20I%20encourage%20anyone%20that%20is%20interested%20in%20systems%20safety%20or%20aviations%20to%20have%20a%20read." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&t=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#operations-is-hard">Operations is hard</a></li>
+    <li><a href="#challenges-to-operational-excellence">Challenges to Operational Excellence</a>
+      <ul>
+        <li><a href="#alert-fatigue">Alert Fatigue</a></li>
+        <li><a href="#emotional-control">Emotional Control</a></li>
+        <li><a href="#the-human-factor">The Human Factor</a></li>
+        <li><a href="#training-vs-reality">Training vs. Reality</a></li>
+        <li><a href="#over-reliance-on-automation">Over-reliance on Automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#closing-thoughts">Closing Thoughts</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Air France Flight 447 - an Operational failure
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-11-06 00:00:00 -0700 PDT" itemprop="datePublished">2022-11-06</time>
+          
+        </div>
+        
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sre" rel="tag">sre</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/operations" rel="tag">operations</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/risk" rel="tag">risk</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/alert-fatigue" rel="tag">alert fatigue</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/air-france-flight-447" rel="tag">air france flight 447</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>I came across an amazing piece of article over this weekend, one that provided an in-depth analysis of the tragedy of Air France Flight 447, <a href="https://admiralcloudberg.medium.com/the-long-way-down-the-crash-of-air-france-flight-447-8a7678c37982">&ldquo;The Long Way Down: The crash of Air France flight 447&rdquo;</a>.</p>
+<p>(Disclaimer: I am in no shape or form affiliated with this author or Medium - I simply think this was an astoundingly well done article and I encourage anyone that is interested in systems safety or aviations to have a read.)</p>
+<p>There&rsquo;s no one word that can summarize how I felt as I was learning about this tragedy. Sadness? Yes. Shock? Absolutely. But more than anything, I could <em>relate</em>.</p>
+<p>I could <em>relate</em> beause this is the kind of scenario that Site Reliability Engineers can deeply relate to &ndash; because what I saw was human, machine, and the glue between them, <em>operations</em>, <em>and</em> how this combined components of a larger system devolved in a <em>systemic failure</em>.</p>
+<p>This tragedy was a systemic failure where no one component was at fault to blame; a systemic failure where vicious feedback loop snowballed; a systemic failure that, at its core, the glue that was supposed to combine the two worlds - <em>operations</em> - had failed both. And this failed operational excellence resulted in a fatal systemic failure that created one of the worst tragedies in aviation history.</p>
+<h2 id="operations-is-hard">Operations is hard</h2>
+<p>In our software engineering industry, I often see operations treated as second class, or at least with some contempt because it deviates from pure coding - which seems regularly misguided.</p>
+<p>More than ever, as more and more software is provided as a managed service and more and more software is being applied to mission critical environments (i.e. health care, space flight, vehicular control plane), experts that understand how a given software works so deeply to the point of being able to not only manage risks involved with running the software, but be able to mitigate and rescue when that software fails are more in need and critical than ever. This does not diminish those whose main focus is to develop - this simply highlights the importance of the merged world between software that is written and expert operators of such software. One cannot exist without the other and one cannot succeed without the other.</p>
+<p>All software - no matter how well unit, end to end, QA tested - have bugs. Even if one software doesn&rsquo;t have bugs, the sheer scale of permutations of different software with varying levels of quality with changing inputs/outputs will create scenarios that have never been tested before and cannot be tested in advance. This is prevalent in the microservices world and ubiquitous in our world where any given service is powered by global groups of services operating at unfathomable scales. Guaranteeing reliability in this chaotic web of software is the cornerstone of operational challenges - and what Site Reliability Engineering is constantly solving.</p>
+<p>Operations must achieve <em><strong>deterministic outcome</strong></em> where the given problem is <em><strong>non-deterministic by nature, mutates with time, and in an unbounded environment</strong></em>. I&rsquo;m not talking about NP-complete/NP-hard kinds of software challenges. I&rsquo;m talking about the fact that operations is really, really, <em>really</em> hard to get right. Why?</p>
+<p>Bugs in software might be deterministic by itself, but non-deterministic when you put a lot of buggy software together. Interventions by human or even automated machines can be unpredictable. Over time, you have a non-deterministic system created by non-deterministic inputs where now the operator must find a very deterministic recovery outcome. It&rsquo;s about restoring order in chaos, and chaos that is dynamically changing with every passing second. And that&rsquo;s <em>hard</em>.</p>
+<p>To put into context, that deterministic outcome could be as simple as &ldquo;available service&rdquo; where non-deterministic environment is &ldquo;we just found a bunch of security vulnerabilities in the system&rdquo;. Even harder, that deterministic outcome could be &ldquo;keep the plane flying&rdquo; where non-deterministic environment is &ldquo;a plane&rsquo;s unknown airspeed in a tropical storm with faulty monitoring equipment&rdquo;. In both examples, the deterministic outcome is &ldquo;restore back to working order&rdquo;.</p>
+<p>So, <em>operations is really hard</em>.<br>
+Achieving <em><strong>operational excellence</strong></em> is even harder.</p>
+<p>Now, going back to Air France Flight 447, I believe the biggest failure with Air France Flight 447 happened at operations. It wasn&rsquo;t the pilots, nor the faulty Pitot tubes, nor policy failure to ban aircrafts not yet retrofitted with Goodrich sensors to fly on hazardous routes, &hellip; It was <em>operations</em>. It was dynamic failure to solve operational problems that was happening real time. The &ldquo;bugs&rdquo; in humans (pilots), the &ldquo;bugs&rdquo; in Pitot tubes (machine), the &ldquo;bugs&rdquo; in uncontrolled fallout from Normal Law to Alternate Law (machine), etc, all didn&rsquo;t matter nearly as much as the failure in operational excellence.</p>
+<p>Now let&rsquo;s unpack that.</p>
+<h2 id="challenges-to-operational-excellence">Challenges to Operational Excellence</h2>
+<h3 id="alert-fatigue">Alert Fatigue</h3>
+<p>As you&rsquo;re reading the article, you might&rsquo;ve noticed all the lines from the transcript that illustrated how the alerting systems were constantly bombarding the pilots. The screaming &ldquo;STALL! STALL!&rdquo; alerts, that was preceeded by the constant &ldquo;C-chord&rdquo; tone. The overwhelming sensory exposure, and rising panic as the pilots were trying to respond to these alarms all the while working with faulty airspeed readings and other automated monitoring that were confusing at best.</p>
+<p>Alert fatigue is a classic and well known problem in any operational setting. Ask any SRE or engineer that&rsquo;s ever been on oncall and they&rsquo;ll tell you how their blood pressure &ldquo;spikes&rdquo; when they receive a pager; awful if it&rsquo;s a critical level pager, and made even worse when you are bombarded by hundreds of pagers that constantly ram you with the no new information.</p>
+<p>Alert fatigue is perhaps one of the most dangerous situations in operations - receiving a constant stream of critical pagers completely disables the operator&rsquo;s critical thinking as the emotional response to overwhelming situations is to shut down and panic. You are trigger a human&rsquo;s natural fight or flight response. One can only learn to be able to control the panic through experience and cannot be taught. Even receiving a constant stream of non-critical pagers is dangerous in the fact that it makes the operator apathetic to the alert, which disables the operator from being able to respond quickly when there is a real present risk. All types of alert fatigue hinder the operators&rsquo; ability to find the root cause and address it.</p>
+<p>No human being, no matter how seasoned they are, can think clearly when experiencing alert fatigue. You can painfully see this play out between Pilot Robert and Pilot Bonin&rsquo;s increasingly dulled reactions to these alarms. Their minds shut down, entirely overwhelmed by sensory input. You&rsquo;ll more quickly reach an overwhelming level of panic the less experienced you are which makes the effects of alert fatigue far more dangerous and this is something you constantly see in new SREs or any operations folks. This leads to my next point &ndash;</p>
+<h3 id="emotional-control">Emotional Control</h3>
+<p>In operations, especially during incidents, controlling emotional response is a critical skill. Notice how I mentioned control, not regulate. Control, because you must find effective methods of preventing panic overwhelming yourself and your team. Regulating is not enough.</p>
+<p>What Captain Dubois could&rsquo;ve done in the scenario as the most seasoned and senior member would be to prevent panic himself, and take control so that the other pilots would not further escalate into panic. On your operations teams, be it SRE or not, if you are one of the more senior members of the team, that is your job - to regulate panic when that big outage hits. It is your job to objectively assess data present, sort what you know and don&rsquo;t know, quickly make decisions, and regain control. Your job isn&rsquo;t to panic alongside everyone else. This is incredibly hard, of course. I personally also know this is very hard, but it must be done. If the most senior members panic you can be assured everyone else also will, with certainty.</p>
+<p>Now, why was Captain Dubois, who was seasoned, senior, and perfectly capable of controlling the panic in this situation unable to do this? &mdash;</p>
+<h3 id="the-human-factor">The Human Factor</h3>
+<p>&mdash; because he had 1 hour of sleep.</p>
+<p>People in operations are ultimately still (as of today) humans with biological needs.</p>
+<p>This is why it&rsquo;s terrible practice to promote oncall shifts that span 24 hours, or shifts that stretch more than 1 week max a time. This is not because your team is incapable of waking up at the middle of the night (not to mention significant drop in quality of life) or because they&rsquo;re incompenent - it is because when it comes to operations, <em>stress is a limiting capacity</em>. All individual team members and team as a whole has max capacity for how much stress they can absorb, handle, and expel. Take away someone&rsquo;s restorative night of sleep, you reduce that capacity. Put someone on 24h shifts, you reduce that capacity. If you want your operations team to operate at max available capacity for stress, you must attend to their basic needs. And yes that includes sleep and something Captain Dubois sorely needed.</p>
+<h3 id="training-vs-reality">Training vs. Reality</h3>
+<p>One of the biggest challenges in operations is that it is not possible to train for all scenarios. The article touches on this and how the pilots&rsquo; simulations shallowly covers training in aircraft stalling scenarios because it is difficult to illustrate.</p>
+<p>Every SRE team and operations team must constantly train with disaster recovery scenarios, drills, and simulation exercises. But it is simply not possible to prepare for everything that can happen. The best you can do is help the team build the skills they&rsquo;ll need when faces with that new unknown, the &ldquo;non-deterministic&rdquo; failure. Nothing teaches better than experience.</p>
+<p>In addition to the drills, I would say the best way to bridge the gap between training and reality is by ensuring oncall has a fallback mechanism, That is built through multiple layers of primary, secondary, and other layers of responses with a clear escalation policy. This helps engaging more experienced members to get involved at the right time and act as mentor to newer folks that are gaining experience.</p>
+<h3 id="over-reliance-on-automation">Over-reliance on Automation</h3>
+<p>Perhaps one of the most poignant point made in the article is how at the end of the day, all three pilots failed to revert to their basic flying skills to take control of the aircraft and fly the plane without automation assistance. When the plane fell out from Normal Law, to Alternate Law, then ultimately Direct Law, the pilots were not able to switch to traditional flying to regain control.</p>
+<p>I think we are an incredibly challenging place where the scale at which operators must manage necessitates the need for automation; but automation has itself has become complex and operators to become too reliant on automation so that there is significant risk in failing to recover from failure modes in automation in response to an underlying root failure in the system. We&rsquo;ve added even more layers to failure complexity, and sometimes automation can be a curse rather than a tool.</p>
+<p>There will always be a need for operators to be able to run systems without automation assistance, with deep understanding of exactly what automation is replacing. Unfortunately, there&rsquo;s no easy way to approach this problem; training can only get you so far but it is something that experience and proper mentorship can teach over time when combined with continued training. This is also why, in the SRE world, it is imperative for all SREs to continue being great software engineers to best understand software as they evolve.</p>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>Reading about Air France Flight 447 was possibly one of the most distressing events I&rsquo;ve ever learned - mostly because I would relate to so much of what had failed as an SRE. What we can learn from this tragedy is about who to blame but rather, how we can learn from it so that we can prevent such tragedies in the future. Especially as SREs, we can learn much from other industries that run critical systems - so that we also do not repeat it in the software world.</p>
+<hr>
+<p>Have a good day! 😊 - Ren</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Food for Thought</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#operations-is-hard">Operations is hard</a></li>
+    <li><a href="#challenges-to-operational-excellence">Challenges to Operational Excellence</a>
+      <ul>
+        <li><a href="#alert-fatigue">Alert Fatigue</a></li>
+        <li><a href="#emotional-control">Emotional Control</a></li>
+        <li><a href="#the-human-factor">The Human Factor</a></li>
+        <li><a href="#training-vs-reality">Training vs. Reality</a></li>
+        <li><a href="#over-reliance-on-automation">Over-reliance on Automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#closing-thoughts">Closing Thoughts</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&text=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&is_video=false&description=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Air%20France%20Flight%20447%20-%20an%20Operational%20failure&body=Check out this article: https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&title=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&name=Air%20France%20Flight%20447%20-%20an%20Operational%20failure&description=I%20came%20across%20an%20amazing%20piece%20of%20article%20over%20this%20weekend%2c%20one%20that%20provided%20an%20in-depth%20analysis%20of%20the%20tragedy%20of%20Air%20France%20Flight%20447%2c%20%26ldquo%3bThe%20Long%20Way%20Down%3a%20The%20crash%20of%20Air%20France%20flight%20447%26rdquo%3b.%0a%28Disclaimer%3a%20I%20am%20in%20no%20shape%20or%20form%20affiliated%20with%20this%20author%20or%20Medium%20-%20I%20simply%20think%20this%20was%20an%20astoundingly%20well%20done%20article%20and%20I%20encourage%20anyone%20that%20is%20interested%20in%20systems%20safety%20or%20aviations%20to%20have%20a%20read." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpid.ren%2fposts%2fsre-operational-excellence%2f&t=Air%20France%20Flight%20447%20-%20an%20Operational%20failure" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Ren Lee 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Food for Thought</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

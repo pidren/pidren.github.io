@@ -2,28 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pid.ren/tags/management/</loc>
-    <lastmod>2022-10-30T00:00:00-07:00</lastmod>
+    <loc>https://pid.ren/tags/2023/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/engineering-management/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/posts/engineering-leadership-goal-2023/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
   </url><url>
     <loc>https://pid.ren/posts/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/</loc>
+    <lastmod>2023-01-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/air-france-flight-447/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/posts/sre-operational-excellence/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/alert-fatigue/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/operations/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/risk/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/sre/</loc>
+    <lastmod>2022-11-06T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pid.ren/tags/management/</loc>
     <lastmod>2022-10-30T00:00:00-07:00</lastmod>
   </url><url>
     <loc>https://pid.ren/posts/reflection-1yr-mgmt-part1/</loc>
     <lastmod>2022-10-30T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://pid.ren/</loc>
-    <lastmod>2022-10-30T00:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://pid.ren/tags/</loc>
-    <lastmod>2022-10-30T00:00:00-07:00</lastmod>
-  </url><url>
     <loc>https://pid.ren/tags/reliability/</loc>
-    <lastmod>2022-10-16T00:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://pid.ren/tags/risk/</loc>
-    <lastmod>2022-10-16T00:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://pid.ren/tags/sre/</loc>
     <lastmod>2022-10-16T00:00:00-07:00</lastmod>
   </url><url>
     <loc>https://pid.ren/posts/single-most-important-vocab-in-sre/</loc>
